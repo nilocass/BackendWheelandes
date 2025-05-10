@@ -46,7 +46,7 @@ const startServer = async () => {
     await sequelize.sync({ force: false });
     console.log('Modelos sincronizados con la base de datos.');
 
-    const PORT = process.env.PORT || 5000;
+    const PORT = process.env.PORT || 3306;
     app.listen(PORT, () => {
       console.log(`Servidor corriendo en el puerto ${PORT}`);
     });

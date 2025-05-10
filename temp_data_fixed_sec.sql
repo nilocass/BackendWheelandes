@@ -31,7 +31,10 @@ CREATE TABLE IF NOT EXISTS `drivers` (
 
 -- Dumping structure for table datos_de_usuario.trips
 CREATE TABLE IF NOT EXISTS `trips` (
-  `trip_id` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `trip_id` varchar(200) NOT NULL,
+  `trip_status` enum('active','completed','cancelled') DEFAULT NULL,
+  `trip_distance` decimal(10,2) DEFAULT NULL,
+  `trip_duration` int DEFAULT NULL,
   `driver_id` int NOT NULL DEFAULT (0),
   `available_spaces` int NOT NULL,
   `passenger_id_1` int DEFAULT NULL,

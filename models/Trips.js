@@ -19,6 +19,10 @@ const Trip = sequelize.define('Trip', {
       key: 'user_id',
     }
   },
+    trip_status: {
+    type: DataTypes.ENUM('active', 'completed', 'cancelled'),
+    allowNull: false,
+    },
   available_spaces: {
     type: DataTypes.INTEGER,
     allowNull: false
